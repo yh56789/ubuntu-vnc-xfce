@@ -75,9 +75,9 @@ RUN \
 FROM stage-ubuntu as stage-xfce
 
 ENV \
-    LANG='en_US.UTF-8' \
-    LANGUAGE='en_US:en' \
-    LC_ALL='en_US.UTF-8'
+    LANG='zh_CN.UTF-8' \
+    LANGUAGE='zh_CN:zh' \
+    LC_ALL='zh_CN.UTF-8'
 
 ### 'apt-get clean' runs automatically
 RUN apt-get update \
@@ -87,7 +87,7 @@ RUN apt-get update \
         supervisor \
         xfce4 \
         xfce4-terminal \
-    && locale-gen en_US.UTF-8 \
+    && locale-gen zh_CN.UTF-8 \
     && apt-get purge -y \
         pm-utils \
         xscreensaver* \
@@ -174,7 +174,7 @@ ENV \
     VNC_COL_DEPTH=24 \
     VNC_PORT="5901" \
     VNC_PW=${ARG_VNC_PW:-headless} \
-    VNC_RESOLUTION=${ARG_VNC_RESOLUTION:-1360x768} \
+    VNC_RESOLUTION=${ARG_VNC_RESOLUTION:-1680x1050} \
     VNC_VIEW_ONLY=false
 
 ### Creates home folder
